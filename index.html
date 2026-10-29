@@ -1,0 +1,97 @@
+<!-- ĐÂY LÀ FILE KHUNG — Không sửa nội dung trực tiếp ở đây.
+     Nội dung lấy từ site.config.js, các khối {{{ @ten }}} do src/templates.js sinh ra.
+     {{ duong.dan }} = chèn giá trị (đã escape), {{{ @tenRenderer }}} = chèn HTML.
+     Thứ tự khu vực (giao diện Prism Aurora): Hero → Đối tác → Giới thiệu → Dịch vụ → Showreel
+     → Gallery → Cảm nhận → Hỏi đáp → Liên hệ → Footer.
+     Build sẽ tự xóa comment này. -->
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  {{{ @seoHead }}}
+  <script>document.documentElement.classList.add("js")</script>
+  <!-- Google Fonts: Unbounded (tiêu đề) + Inter (nội dung) — có tiếng Việt, display=swap, không chặn render -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Unbounded:wght@500;600&display=swap"></noscript>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+  <a href="#main" class="skip-link">{{ ui.skipLink }}</a>
+
+  <!-- ═══ HEADER: thanh kính bo tròn nổi ═══ -->
+  <header id="site-header" class="fixed inset-x-0 top-0 z-50 px-2.5 pt-[max(0.625rem,env(safe-area-inset-top))] sm:px-4 lg:px-5">
+    <div class="header-bar mx-auto flex h-14 max-w-6xl items-center justify-between gap-3 rounded-full pl-2 pr-1.5 lg:h-16 lg:pl-3 lg:pr-2">
+      <a href="#hero" class="flex min-h-11 min-w-0 items-center gap-2.5 rounded-full pr-2">
+        <img src="{{ brand.logo }}" alt="{{ brand.logoAlt }}" class="size-9 shrink-0" width="40" height="40">
+        <span class="truncate font-display text-base font-semibold">{{ brand.name }}</span>
+      </a>
+
+      <nav class="hidden items-center gap-2 lg:flex" aria-label="Menu chính">
+          {{{ @headerNav }}}
+      </nav>
+
+      <a {{{ @ctaAttrs }}} class="btn-glow hidden h-11 shrink-0 px-5 text-[0.9375rem] lg:inline-flex">
+        {{ header.ctaButton.label }}
+      </a>
+
+      <button type="button" id="menu-toggle" class="menu-btn lg:hidden" aria-expanded="false" aria-controls="mobile-menu" data-close-label="{{ ui.closeLabel }}">
+        <span data-menu-label>{{ ui.menuLabel }}</span>
+        <span class="burger" aria-hidden="true"><span></span><span></span></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- ═══ MENU ĐIỆN THOẠI: tấm kính thả xuống dưới header ═══ -->
+  <div id="mobile-menu" class="menu-layer lg:hidden">
+    <div class="menu-backdrop" data-menu-close></div>
+    <nav class="menu-panel" aria-label="Menu điện thoại">
+      {{{ @mobileNav }}}
+    </nav>
+  </div>
+
+  <main id="main">
+    <!-- ═══ HERO ═══ -->
+    {{{ @heroSection }}}
+
+    <!-- ═══ ĐỐI TÁC ═══ -->
+    {{{ @partnersSection }}}
+
+    <!-- ═══ GIỚI THIỆU ═══ -->
+    {{{ @aboutSection }}}
+
+    <!-- ═══ DỊCH VỤ ═══ -->
+    {{{ @servicesSection }}}
+
+    <!-- ═══ VIDEO SHOWREEL ═══ -->
+    {{{ @videosSection }}}
+
+    <!-- ═══ GALLERY ═══ -->
+    {{{ @gallerySection }}}
+
+    <!-- ═══ CẢM NHẬN ═══ -->
+    {{{ @testimonialsSection }}}
+
+    <!-- ═══ HỎI ĐÁP ═══ -->
+    {{{ @faqSection }}}
+
+    <!-- ═══ LIÊN HỆ ═══ -->
+    {{{ @contactSection }}}
+  </main>
+
+  <!-- ═══ FOOTER ═══ -->
+  {{{ @footerSection }}}
+
+  <!-- ═══ NÚT NỔI: Zalo (máy tính) + dock đặt lịch (điện thoại) ═══ -->
+  {{{ @floatingButton }}}
+  {{{ @dock }}}
+
+  <!-- ═══ HỘP THOẠI: lightbox ảnh + trình phát video ═══ -->
+  {{{ @dialogs }}}
+
+  <script src="assets/js/main.js" defer></script>
+</body>
+</html>
