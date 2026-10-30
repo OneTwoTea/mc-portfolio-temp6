@@ -795,6 +795,7 @@ export function createRenderers(config) {
         <p class="text-base text-fg-muted">${esc(f.copyright || "")}</p>
         ${f.backToTop ? `<a href="#hero" class="inline-flex min-h-11 items-center gap-2 self-start text-base font-medium text-fg-muted transition-colors hover:text-fg sm:self-auto">Lên đầu trang ${icon("arrowUp", "size-4")}</a>` : ""}
       </div>
+      <p class="mt-6 text-center text-xs text-fg-muted">© 2026 ProfileStudio.me. Nền tảng xây dựng hồ sơ cá nhân chuyên nghiệp.</p>
     </div>
   </footer>`;
     },
